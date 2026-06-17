@@ -1,0 +1,23 @@
+{
+  "name": "aurelia-cleaning-co",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "set NODE_ENV=development&& next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.3",
+    "postcss": "8.5.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "overrides": {
+    "postcss": "8.5.15"
+  }
+}
