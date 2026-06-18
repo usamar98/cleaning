@@ -18,12 +18,19 @@ import {
   Star,
   Waves
 } from "lucide-react";
-import { Chatbot } from "@/components/Chatbot";
 import { AppointmentForm, ContactForm } from "@/components/Forms";
 import { Header } from "@/components/Header";
 import { HorizontalScroller } from "@/components/HorizontalScroller";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const bookingHref = "#appointment";
+const phoneDisplay = "07481 046053";
+const phoneHref = "+447481046053";
+const email = "blackburncleaningservices26@gmail.com";
+const address = "BB2 3PB, 37 Lynthorpe Road, Blackburn";
+const workingHours = "Monday - Saturday, 9:00 AM - 6:00 PM";
+const whatsappHref =
+  "https://wa.me/447481046053?text=Hello%20Aurelia%20Cleaning%20Co.%2C%20I%20would%20like%20to%20book%20a%20cleaning.";
 
 const images = {
   hero: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1500&q=86",
@@ -34,8 +41,7 @@ const images = {
   move: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82",
   construction: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=82",
   carpet: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=82",
-  windows: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82",
-  map: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=82"
+  windows: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82"
 };
 
 const services = [
@@ -43,7 +49,7 @@ const services = [
     title: "Luxury Home Cleaning",
     icon: Home,
     image: images.lounge,
-    text: "Discreet weekly, fortnightly, or one-off cleaning for refined London homes."
+    text: "Discreet weekly, fortnightly, or one-off cleaning for refined Blackburn homes."
   },
   {
     title: "Deep Cleaning",
@@ -173,12 +179,12 @@ const pricing = [
     name: "Estate",
     price: "Custom quote",
     text: "For larger homes, offices, and managed properties.",
-    features: ["Dedicated cleaning plan", "Specialist teams", "Quality inspection", "Flexible London scheduling"]
+    features: ["Dedicated cleaning plan", "Specialist teams", "Quality inspection", "Flexible Blackburn scheduling"]
   }
 ];
 
 const faqs = [
-  ["What areas of London do you cover?", "We serve Central London and selected Greater London neighbourhoods. Share your postcode and we will confirm availability."],
+  ["What areas do you cover?", "We serve Blackburn and nearby areas. Share your postcode and we will confirm availability."],
   ["Are your cleaners insured?", "Yes. Aurelia Cleaning Co. works with vetted, trained, and insured cleaning specialists."],
   ["Do you bring cleaning products?", "Yes. We can bring premium cleaning products and equipment, or use preferred products supplied at the property."],
   ["Can I book recurring cleaning?", "Yes. Weekly, fortnightly, monthly, and custom schedules are available for homes, offices, and managed properties."],
@@ -212,7 +218,7 @@ export default function HomePage() {
         <FAQ />
       </main>
       <Footer />
-      <Chatbot />
+      <WhatsAppButton href={whatsappHref} phone={phoneDisplay} />
     </>
   );
 }
@@ -229,7 +235,7 @@ function Hero() {
             <span className="block">Immaculate</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-smoke">
-            Premium residential and commercial cleaning in London, designed for elegant homes, polished workspaces,
+            Premium residential and commercial cleaning in Blackburn, designed for elegant homes, polished workspaces,
             short-let properties, and clients who notice every detail.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -248,7 +254,7 @@ function Hero() {
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {[
-              ["London UK", MapPin],
+              ["Blackburn UK", MapPin],
               ["Insured Team", ShieldCheck],
               ["Premium Products", Gem]
             ].map(([label, Icon]) => (
@@ -263,7 +269,7 @@ function Hero() {
         <div className="relative min-h-[520px]">
           <div className="absolute -right-10 top-4 hidden h-72 w-72 border border-champagne/20 lg:block" />
           <div className="premium-card absolute right-0 top-0 h-[440px] w-full max-w-[720px] overflow-hidden rounded-[8px]">
-            <img src={images.hero} alt="Luxury London interior prepared for premium cleaning" className="h-full w-full object-cover image-tone" />
+            <img src={images.hero} alt="Luxury interior prepared for premium cleaning" className="h-full w-full object-cover image-tone" />
             <div className="absolute inset-0 bg-gradient-to-t from-night/88 via-night/12 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-[1fr_auto] sm:items-end">
               <div>
@@ -334,7 +340,7 @@ function WhyChooseUs() {
     ["Vetted specialists", "Experienced cleaners selected for premium properties and careful communication.", ShieldCheck],
     ["Hotel-level standards", "A detailed finishing checklist brings a concierge feel to every visit.", Gem],
     ["Eco-conscious products", "Beautiful results with considered products for homes, guests, teams, and pets.", Sparkles],
-    ["Flexible London scheduling", "One-off, urgent, and recurring cleaning plans built around access windows.", CalendarDays]
+    ["Flexible Blackburn scheduling", "One-off, urgent, and recurring cleaning plans built around access windows.", CalendarDays]
   ];
 
   return (
@@ -436,9 +442,9 @@ function Appointment() {
             Share the essentials and Aurelia will respond with a refined cleaning plan, timing options, and a tailored quote.
           </p>
           <div className="mt-8 grid gap-4 text-sm text-pearl">
-            <InfoRow icon={Clock} title="Working hours" text="Mon - Sat, 8:00 AM - 7:00 PM" />
-            <InfoRow icon={MapPin} title="Location" text="London, United Kingdom" />
-            <InfoRow icon={Phone} title="Call" text="+44 20 7946 0958" />
+            <InfoRow icon={Clock} title="Working hours" text={workingHours} />
+            <InfoRow icon={MapPin} title="Address" text={address} />
+            <InfoRow icon={Phone} title="Call" text={phoneDisplay} href={`tel:${phoneHref}`} />
           </div>
         </div>
         <div className="premium-card rounded-[8px] p-5 sm:p-7">
@@ -453,48 +459,30 @@ function Contact() {
   return (
     <section id="contact" className="section-pad bg-charcoal">
       <div className="section-shell">
-        <div className="mb-10 grid gap-5 lg:grid-cols-[0.72fr_1fr] lg:items-end">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
           <h2 className="display-title text-4xl text-ivory sm:text-5xl lg:text-6xl">Contact Aurelia</h2>
-          <p className="max-w-2xl text-base leading-8 text-smoke lg:justify-self-end">
-            Call, email, WhatsApp, or send a note. We serve London homes, hosts, offices, restaurants, and managed properties.
+          <p className="mt-5 text-base leading-8 text-smoke">
+            Call, email, WhatsApp, or send a note. We serve Blackburn homes, hosts, offices, restaurants, and managed properties.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="premium-card rounded-[8px] p-6">
-            <div className="grid gap-4">
-              <InfoRow icon={Phone} title="Phone" text="+44 20 7946 0958" href="tel:+442079460958" />
-              <InfoRow icon={Mail} title="Email" text="hello@aureliacleaning.co.uk" href="mailto:hello@aureliacleaning.co.uk" />
-              <InfoRow icon={MapPin} title="London UK" text="Mayfair, London, serving selected Greater London areas" />
-              <InfoRow icon={Clock} title="Working hours" text="Monday - Saturday, 8:00 AM - 7:00 PM" />
+        <div className="mx-auto grid max-w-5xl gap-5">
+          <div className="premium-card rounded-[8px] p-6 text-center">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <ContactCard icon={Phone} title="Phone" text={phoneDisplay} href={`tel:${phoneHref}`} />
+              <ContactCard icon={Mail} title="Email" text={email} href={`mailto:${email}`} />
+              <ContactCard icon={MapPin} title="Address" text={address} />
+              <ContactCard icon={Clock} title="Working Hours" text={workingHours} />
             </div>
             <a
-              href="https://wa.me/442079460958?text=Hello%20Aurelia%20Cleaning%20Co.%2C%20I%20would%20like%20to%20book%20a%20cleaning."
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-champagne/35 px-5 py-4 text-sm font-semibold text-champagne transition hover:border-champagne hover:bg-champagne/10"
+              href={whatsappHref}
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-[8px] border border-champagne/35 px-6 py-4 text-sm font-semibold text-champagne transition hover:border-champagne hover:bg-champagne/10"
             >
               <MessageCircle size={18} />
-              WhatsApp Aurelia
+              WhatsApp {phoneDisplay}
             </a>
-            <div className="mt-8">
+            <div className="mx-auto mt-8 max-w-2xl text-left">
               <ContactForm />
-            </div>
-          </div>
-
-          <div className="premium-card overflow-hidden rounded-[8px]">
-            <div className="grid min-h-[520px] grid-rows-[1fr_auto]">
-              <iframe
-                title="Aurelia Cleaning Co. London map"
-                src="https://www.google.com/maps?q=Mayfair%2C%20London%2C%20UK&output=embed"
-                className="h-full min-h-[390px] w-full grayscale invert-[0.88] contrast-[0.95] sepia-[0.22]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="border-t border-champagne/15 p-5">
-                <p className="text-sm uppercase tracking-[0.22em] text-champagne">London service area</p>
-                <p className="mt-2 text-sm leading-7 text-smoke">
-                  Map embed uses a central London marker as a placeholder. Swap it for the exact business address when ready.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -540,7 +528,7 @@ function Footer() {
             </span>
             <div>
               <p className="display-title text-2xl text-ivory">Aurelia Cleaning Co.</p>
-              <p className="text-xs uppercase tracking-[0.22em] text-smoke">London luxury cleaning</p>
+              <p className="text-xs uppercase tracking-[0.22em] text-smoke">Blackburn luxury cleaning</p>
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-smoke">
@@ -552,9 +540,10 @@ function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-champagne">Contact</h3>
           <div className="mt-5 grid gap-3 text-sm text-smoke">
-            <a href="tel:+442079460958" className="hover:text-champagne">+44 20 7946 0958</a>
-            <a href="mailto:hello@aureliacleaning.co.uk" className="hover:text-champagne">hello@aureliacleaning.co.uk</a>
-            <span>London, United Kingdom</span>
+            <a href={`tel:${phoneHref}`} className="hover:text-champagne">{phoneDisplay}</a>
+            <a href={`mailto:${email}`} className="hover:text-champagne">{email}</a>
+            <span>{address}</span>
+            <span>{workingHours}</span>
           </div>
         </div>
       </div>
@@ -591,6 +580,30 @@ function InfoRow({ icon: Icon, title, text, href }) {
   }
 
   return <div className="flex gap-3">{content}</div>;
+}
+
+function ContactCard({ icon: Icon, title, text, href }) {
+  const content = (
+    <div className="grid h-full justify-items-center gap-3 rounded-[8px] border border-champagne/15 bg-night/45 p-5">
+      <span className="grid size-12 place-items-center rounded-[8px] border border-champagne/20 text-champagne">
+        <Icon size={20} strokeWidth={1.6} />
+      </span>
+      <span>
+        <span className="block text-sm font-semibold text-ivory">{title}</span>
+        <span className="mt-2 block break-words text-sm leading-6 text-smoke">{text}</span>
+      </span>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className="transition hover:text-champagne">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
 }
 
 function FooterLinks({ title, links }) {

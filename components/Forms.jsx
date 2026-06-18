@@ -18,10 +18,36 @@ const frequencies = ["One-off", "Weekly", "Fortnightly", "Monthly", "Custom"];
 
 export function AppointmentForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError("");
+    setSent(false);
+
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "appointment", payload })
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      setSent(true);
+    } catch (submissionError) {
+      setError("Something went wrong. Please call or WhatsApp us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -47,17 +73,19 @@ export function AppointmentForm() {
       <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center lg:col-span-2">
         <button
           type="submit"
+          disabled={submitting}
           className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-champagne px-6 py-4 text-sm font-semibold text-night shadow-gold transition hover:bg-ivory"
         >
-          Request Appointment
+          {submitting ? "Sending..." : "Request Appointment"}
           <Send size={17} />
         </button>
         {sent ? (
           <p className="inline-flex items-center gap-2 text-sm text-champagne" role="status">
             <CheckCircle2 size={17} />
-            Request received. This demo form is ready for a real booking endpoint.
+            Appointment request received.
           </p>
         ) : null}
+        {error ? <p className="text-sm text-red-300" role="alert">{error}</p> : null}
       </div>
     </form>
   );
@@ -65,10 +93,36 @@ export function AppointmentForm() {
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError("");
+    setSent(false);
+
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "contact", payload })
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      setSent(true);
+    } catch (submissionError) {
+      setError("Something went wrong. Please call or WhatsApp us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -88,12 +142,14 @@ export function ContactForm() {
       </label>
       <button
         type="submit"
+        disabled={submitting}
         className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-champagne px-5 py-4 text-sm font-semibold text-night transition hover:bg-ivory"
       >
-        Send Message
+        {submitting ? "Sending..." : "Send Message"}
         <Send size={17} />
       </button>
-      {sent ? <p className="text-sm text-champagne">Thank you. This demo contact form is ready for integration.</p> : null}
+      {sent ? <p className="text-sm text-champagne">Thank you. Your message has been sent.</p> : null}
+      {error ? <p className="text-sm text-red-300" role="alert">{error}</p> : null}
     </form>
   );
 }
