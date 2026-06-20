@@ -1,6 +1,6 @@
 # BlackBurn Cleaning Services
 
-A dark luxury Next.js, React, Tailwind CSS, and Framer Motion cleaning website for a premium Blackburn service brand.
+A white and green luxury Next.js, React, Tailwind CSS, and Framer Motion cleaning website for a premium Blackburn service brand.
 
 ## Run locally
 

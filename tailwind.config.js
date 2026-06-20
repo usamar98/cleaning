@@ -8,27 +8,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        night: "#080806",
-        coal: "#11100d",
-        charcoal: "#171512",
-        graphite: "#2a2925",
-        smoke: "#a9a399",
-        ivory: "#f7f0e2",
-        pearl: "#e5dccb",
-        champagne: "#d8bc82",
-        gold: "#bd914a",
-        bronze: "#806132"
+        night: "#ffffff",
+        coal: "#f6fbf6",
+        charcoal: "#edf7ef",
+        graphite: "#d7e6db",
+        smoke: "#5f6f63",
+        ivory: "#102016",
+        pearl: "#26382c",
+        champagne: "#15803d",
+        gold: "#0f6b35",
+        bronze: "#0b4d28"
       },
       fontFamily: {
         display: ["Georgia", "Times New Roman", "serif"],
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        aurelia: "0 30px 90px rgba(0, 0, 0, 0.45)",
-        gold: "0 18px 50px rgba(189, 145, 74, 0.18)"
+        aurelia: "0 30px 90px rgba(15, 107, 53, 0.14)",
+        gold: "0 18px 50px rgba(21, 128, 61, 0.18)"
       },
       backgroundImage: {
-        "quiet-radial": "radial-gradient(circle at 20% 10%, rgba(216,188,130,.16), transparent 32%), radial-gradient(circle at 90% 0%, rgba(247,240,226,.08), transparent 26%)"
+        "quiet-radial": "radial-gradient(circle at 20% 10%, rgba(21,128,61,.12), transparent 32%), radial-gradient(circle at 90% 0%, rgba(15,107,53,.08), transparent 26%)"
       },
       keyframes: {
         float: {

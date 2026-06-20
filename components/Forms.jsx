@@ -11,8 +11,11 @@ const services = [
   "Airbnb Cleaning",
   "Move-In / Move-Out Cleaning",
   "Post-Construction Cleaning",
-  "Carpet & Upholstery Cleaning",
-  "Window Cleaning"
+  "Jet Cleaning",
+  "Window Cleaning",
+  "Carpet Cleaning",
+  "Roof Cleaning",
+  "Rubbish Removal"
 ];
 const frequencies = ["One-Time", "Weekly", "Bi-Weekly", "Monthly"];
 

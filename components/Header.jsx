@@ -17,7 +17,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne/15 bg-night/88 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne/15 bg-transparent backdrop-blur-md">
       <div className="section-shell flex h-20 items-center justify-between gap-5">
         <a href="#top" className="group flex items-center gap-3" aria-label="BlackBurn Cleaning Services home">
           <BrandLogo />
@@ -54,7 +54,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-champagne/15 bg-night/96 lg:hidden">
+        <div className="border-t border-champagne/15 bg-night/95 shadow-gold lg:hidden">
           <nav className="section-shell grid gap-1 py-4 text-sm text-pearl" aria-label="Mobile navigation">
             {navItems.map(([label, href]) => (
               <a

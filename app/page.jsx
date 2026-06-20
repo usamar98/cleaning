@@ -5,6 +5,7 @@ import {
   CalendarDays,
   Check,
   Clock,
+  Droplets,
   Gem,
   Home,
   Hotel,
@@ -15,6 +16,7 @@ import {
   Sparkles,
   SprayCan,
   Star,
+  Trash2,
   Waves
 } from "lucide-react";
 import { AppointmentForm, ContactForm } from "@/components/Forms";
@@ -32,6 +34,9 @@ const workingHours = "Monday - Saturday, 9:00 AM - 6:00 PM";
 const whatsappHref =
   "https://wa.me/447481046053?text=Hello%20BlackBurn%20Cleaning%20Services%2C%20I%20would%20like%20to%20book%20a%20cleaning.";
 
+const servicePhoto = (query) =>
+  `https://source.unsplash.com/900x700/?${encodeURIComponent(query)}`;
+
 const images = {
   hero: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1500&q=86",
   lounge: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=82",
@@ -41,57 +46,86 @@ const images = {
   move: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=82",
   construction: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=82",
   carpet: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=82",
-  windows: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82"
+  windows: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82",
+  residentialCleaning: servicePhoto("residential home cleaning bright living room"),
+  deepCleaning: servicePhoto("deep cleaning kitchen professional cleaner"),
+  officeCleaning: servicePhoto("office cleaning professional workspace"),
+  airbnbCleaning: servicePhoto("airbnb bedroom cleaning linen"),
+  moveCleaning: servicePhoto("move out cleaning empty apartment"),
+  postConstructionCleaning: servicePhoto("post construction cleaning dust"),
+  jetCleaning: servicePhoto("jet washing driveway pressure cleaning"),
+  windowCleaning: servicePhoto("window cleaning professional cleaner"),
+  carpetCleaning: servicePhoto("carpet cleaning machine"),
+  roofCleaning: servicePhoto("roof cleaning house exterior"),
+  rubbishRemoval: servicePhoto("rubbish removal waste clearance")
 };
 
 const services = [
   {
     title: "Luxury Home Cleaning",
     icon: Home,
-    image: images.lounge,
+    image: images.residentialCleaning,
     text: "Discreet weekly, fortnightly, or one-off cleaning for refined Blackburn homes."
   },
   {
     title: "Deep Cleaning",
     icon: Sparkles,
-    image: images.kitchen,
+    image: images.deepCleaning,
     text: "A detailed top-to-bottom reset for kitchens, bathrooms, fixtures, and finishes."
   },
   {
     title: "Office Cleaning",
     icon: Building2,
-    image: images.office,
+    image: images.officeCleaning,
     text: "Quiet commercial cleaning that keeps workspaces polished and guest-ready."
   },
   {
     title: "Airbnb Cleaning",
     icon: Hotel,
-    image: images.bedroom,
+    image: images.airbnbCleaning,
     text: "Fast turnover cleaning with linen presentation and guest-arrival checks."
   },
   {
     title: "Move-In / Move-Out Cleaning",
     icon: BadgeCheck,
-    image: images.move,
+    image: images.moveCleaning,
     text: "End-of-tenancy and relocation cleaning for a confident handover."
   },
   {
     title: "Post-Construction Cleaning",
     icon: SprayCan,
-    image: images.construction,
+    image: images.postConstructionCleaning,
     text: "Fine dust removal, surface polishing, and final presentation after works."
   },
   {
-    title: "Carpet & Upholstery Cleaning",
-    icon: Waves,
-    image: images.carpet,
-    text: "Fabric care for carpets, sofas, chairs, and soft furnishings."
+    title: "Jet Cleaning",
+    icon: Droplets,
+    image: images.jetCleaning,
+    text: "High-pressure jet washing for driveways, patios, paths, and exterior hard surfaces."
   },
   {
     title: "Window Cleaning",
     icon: Star,
-    image: images.windows,
+    image: images.windowCleaning,
     text: "Interior and exterior glass care for brighter views and a sharper impression."
+  },
+  {
+    title: "Carpet Cleaning",
+    icon: Waves,
+    image: images.carpetCleaning,
+    text: "Fabric care for carpets, sofas, chairs, and soft furnishings."
+  },
+  {
+    title: "Roof Cleaning",
+    icon: Home,
+    image: images.roofCleaning,
+    text: "Careful exterior cleaning for roof surfaces, moss buildup, gutters, and visible roofline areas."
+  },
+  {
+    title: "Rubbish Removal",
+    icon: Trash2,
+    image: images.rubbishRemoval,
+    text: "Reliable waste clearance after cleaning projects, moves, renovations, and property resets."
   }
 ];
 
@@ -530,10 +564,10 @@ function Footer() {
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-smoke">
-            Luxury home, office, Airbnb, deep, move-out, post-construction, carpet, upholstery, and window cleaning.
+            Luxury home, office, Airbnb, deep, move-out, post-construction, jet, window, carpet, roof, and rubbish removal services.
           </p>
         </div>
-        <FooterLinks title="Services" links={["Luxury Home Cleaning", "Deep Cleaning", "Office Cleaning", "Airbnb Cleaning"]} />
+        <FooterLinks title="Services" links={["Luxury Home Cleaning", "Jet Cleaning", "Window Cleaning", "Rubbish Removal"]} />
         <FooterLinks title="Company" links={["Projects", "Reviews", "Pricing", "FAQ"]} />
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-champagne">Contact</h3>

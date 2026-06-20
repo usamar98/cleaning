@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #080806;
-  --foreground: #f7f0e2;
+  --background: #ffffff;
+  --foreground: #102016;
 }
 
 * {
@@ -21,8 +21,8 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgba(8, 8, 6, 0.78), rgba(8, 8, 6, 0.98)),
-    radial-gradient(circle at 50% 0%, rgba(216, 188, 130, 0.12), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 251, 246, 0.98)),
+    radial-gradient(circle at 50% 0%, rgba(21, 128, 61, 0.11), transparent 38%),
     var(--background);
   color: var(--foreground);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -48,8 +48,8 @@ img {
 }
 
 ::selection {
-  background: #d8bc82;
-  color: #080806;
+  background: #15803d;
+  color: #ffffff;
 }
 
 .section-shell {
@@ -71,26 +71,26 @@ img {
 }
 
 .hairline {
-  background: linear-gradient(90deg, transparent, rgba(216, 188, 130, 0.6), transparent);
+  background: linear-gradient(90deg, transparent, rgba(21, 128, 61, 0.5), transparent);
   height: 1px;
 }
 
 .premium-card {
-  border: 1px solid rgba(216, 188, 130, 0.2);
-  background: linear-gradient(145deg, rgba(23, 21, 18, 0.96), rgba(12, 12, 10, 0.92));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(21, 128, 61, 0.16);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 249, 241, 0.94));
+  box-shadow: 0 24px 70px rgba(15, 107, 53, 0.12);
 }
 
 .image-tone {
-  filter: saturate(0.88) contrast(1.05) brightness(0.88);
+  filter: saturate(1.02) contrast(1.03) brightness(1);
 }
 
 .luxury-input {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(216, 188, 130, 0.24);
-  background: rgba(8, 8, 6, 0.62);
-  color: #f7f0e2;
+  border: 1px solid rgba(21, 128, 61, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+  color: #102016;
   outline: none;
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
@@ -99,13 +99,13 @@ img {
 }
 
 .luxury-input::placeholder {
-  color: rgba(229, 220, 203, 0.48);
+  color: rgba(95, 111, 99, 0.62);
 }
 
 .luxury-input:focus {
-  border-color: rgba(216, 188, 130, 0.8);
-  box-shadow: 0 0 0 4px rgba(216, 188, 130, 0.1);
-  background: rgba(17, 16, 13, 0.92);
+  border-color: rgba(21, 128, 61, 0.8);
+  box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 .skip-default-marker summary::-webkit-details-marker {
