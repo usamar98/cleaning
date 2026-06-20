@@ -10,7 +10,6 @@ import {
   Hotel,
   Mail,
   MapPin,
-  MessageCircle,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -19,9 +18,10 @@ import {
   Waves
 } from "lucide-react";
 import { AppointmentForm, ContactForm } from "@/components/Forms";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Header } from "@/components/Header";
 import { HorizontalScroller } from "@/components/HorizontalScroller";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { WhatsAppButton, WhatsAppMark } from "@/components/WhatsAppButton";
 
 const bookingHref = "#appointment";
 const phoneDisplay = "07481 046053";
@@ -478,8 +478,8 @@ function Contact() {
               href={whatsappHref}
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-[8px] border border-champagne/35 px-6 py-4 text-sm font-semibold text-champagne transition hover:border-champagne hover:bg-champagne/10"
             >
-              <MessageCircle size={18} />
-              WhatsApp {phoneDisplay}
+              <WhatsAppMark className="size-[18px]" />
+              Chat on WhatsApp
             </a>
             <div className="mx-auto mt-8 max-w-2xl text-left">
               <ContactForm />
@@ -523,9 +523,7 @@ function Footer() {
       <div className="section-shell grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-[8px] border border-champagne/35 text-champagne">
-              <Sparkles size={22} />
-            </span>
+            <BrandLogo />
             <div>
               <p className="display-title text-2xl text-ivory">BlackBurn Cleaning Services</p>
               <p className="text-xs uppercase tracking-[0.22em] text-smoke">Blackburn luxury cleaning</p>
@@ -548,7 +546,7 @@ function Footer() {
         </div>
       </div>
       <div className="section-shell mt-10 flex flex-col gap-3 border-t border-champagne/10 pt-6 text-xs text-smoke sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 BlackBurn Cleaning Services. All rights reserved.</p>
+        <p>Copyright 2026 BlackBurn Cleaning Services. All rights reserved.</p>
         <div className="flex gap-5">
           <a href="#appointment" className="hover:text-champagne">Book Cleaning</a>
           <a href="#contact" className="hover:text-champagne">Contact</a>

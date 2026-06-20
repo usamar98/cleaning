@@ -3,9 +3,9 @@
 import { CheckCircle2, Send } from "lucide-react";
 import { useState } from "react";
 
-const propertyTypes = ["Apartment", "Townhouse", "Detached home", "Office", "Retail", "Restaurant", "Airbnb", "Other"];
+const propertyTypes = ["House", "Apartment", "Villa", "Office", "Airbnb / Short-Term Rental", "Commercial Property"];
 const services = [
-  "Luxury Home Cleaning",
+  "Residential Cleaning",
   "Deep Cleaning",
   "Office Cleaning",
   "Airbnb Cleaning",
@@ -14,7 +14,7 @@ const services = [
   "Carpet & Upholstery Cleaning",
   "Window Cleaning"
 ];
-const frequencies = ["One-off", "Weekly", "Fortnightly", "Monthly", "Custom"];
+const frequencies = ["One-Time", "Weekly", "Bi-Weekly", "Monthly"];
 
 export function AppointmentForm() {
   const [sent, setSent] = useState(false);
@@ -52,17 +52,17 @@ export function AppointmentForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4 lg:grid-cols-2">
-      <Field label="Full name" name="name" required />
-      <Field label="Phone" name="phone" type="tel" required />
-      <Field label="Email" name="email" type="email" required />
-      <SelectField label="Property type" name="propertyType" options={propertyTypes} />
-      <SelectField label="Service needed" name="service" options={services} />
-      <Field label="Preferred date" name="date" type="date" />
-      <Field label="Preferred time" name="time" type="time" />
+      <Field label="Full Name" name="name" required />
+      <Field label="Phone Number" name="phone" type="tel" required />
+      <Field label="Email Address" name="email" type="email" required />
+      <SelectField label="Property Type" name="propertyType" options={propertyTypes} />
+      <SelectField label="Cleaning Service" name="service" options={services} />
+      <Field label="Preferred Date" name="date" type="date" />
+      <Field label="Preferred Time" name="time" type="time" />
       <SelectField label="Frequency" name="frequency" options={frequencies} />
-      <Field label="Property size" name="size" placeholder="Example: 2 bedroom flat, 1,200 sq ft" className="lg:col-span-2" />
+      <Field label="Property Size" name="size" placeholder="Example: 2 bedroom flat, 1,200 sq ft" className="lg:col-span-2" />
       <label className="grid gap-2 text-sm font-medium text-pearl lg:col-span-2">
-        Message
+        Special Instructions
         <textarea
           name="message"
           rows={5}

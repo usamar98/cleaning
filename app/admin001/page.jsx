@@ -8,7 +8,7 @@ const labels = {
   phone: "Phone",
   email: "Email",
   propertyType: "Property type",
-  service: "Service needed",
+  service: "Cleaning service",
   date: "Preferred date",
   time: "Preferred time",
   frequency: "Frequency",

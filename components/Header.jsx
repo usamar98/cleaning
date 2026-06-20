@@ -1,7 +1,8 @@
 "use client";
 
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const navItems = [
   ["Services", "#services"],
@@ -19,9 +20,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne/15 bg-night/88 backdrop-blur-xl">
       <div className="section-shell flex h-20 items-center justify-between gap-5">
         <a href="#top" className="group flex items-center gap-3" aria-label="BlackBurn Cleaning Services home">
-          <span className="grid size-11 place-items-center rounded-[8px] border border-champagne/35 bg-charcoal text-champagne shadow-gold">
-            <Sparkles size={22} strokeWidth={1.7} />
-          </span>
+          <BrandLogo />
           <span className="leading-none">
             <span className="display-title block text-2xl text-ivory">BlackBurn</span>
             <span className="mt-1 block text-xs uppercase tracking-[0.24em] text-smoke">Cleaning Services</span>
