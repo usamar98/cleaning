@@ -34,9 +34,6 @@ const workingHours = "Monday - Saturday, 9:00 AM - 6:00 PM";
 const whatsappHref =
   "https://wa.me/447481046053?text=Hello%20BlackBurn%20Cleaning%20Services%2C%20I%20would%20like%20to%20book%20a%20cleaning.";
 
-const servicePhoto = (query) =>
-  `https://source.unsplash.com/900x700/?${encodeURIComponent(query)}`;
-
 const images = {
   hero: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1500&q=86",
   lounge: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=82",
@@ -47,17 +44,17 @@ const images = {
   construction: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=82",
   carpet: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=82",
   windows: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=82",
-  residentialCleaning: servicePhoto("residential home cleaning bright living room"),
-  deepCleaning: servicePhoto("deep cleaning kitchen professional cleaner"),
-  officeCleaning: servicePhoto("office cleaning professional workspace"),
-  airbnbCleaning: servicePhoto("airbnb bedroom cleaning linen"),
-  moveCleaning: servicePhoto("move out cleaning empty apartment"),
-  postConstructionCleaning: servicePhoto("post construction cleaning dust"),
-  jetCleaning: servicePhoto("jet washing driveway pressure cleaning"),
-  windowCleaning: servicePhoto("window cleaning professional cleaner"),
-  carpetCleaning: servicePhoto("carpet cleaning machine"),
-  roofCleaning: servicePhoto("roof cleaning house exterior"),
-  rubbishRemoval: servicePhoto("rubbish removal waste clearance")
+  residentialCleaning: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=82",
+  deepCleaning: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=900&q=82",
+  officeCleaning: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82",
+  airbnbCleaning: "https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=900&q=82",
+  moveCleaning: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82",
+  postConstructionCleaning: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=82",
+  jetCleaning: "https://images.unsplash.com/photo-1707897283727-31befe824066?auto=format&fit=crop&w=900&q=82",
+  windowCleaning: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=900&q=82",
+  carpetCleaning: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=82",
+  roofCleaning: "https://images.unsplash.com/photo-1744044155829-610dded4cead?auto=format&fit=crop&w=900&q=82",
+  rubbishRemoval: "https://images.unsplash.com/photo-1670175035057-eec020c03eb9?auto=format&fit=crop&w=900&q=82"
 };
 
 const services = [
