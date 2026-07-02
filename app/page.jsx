@@ -159,6 +159,48 @@ const projects = [
   }
 ];
 
+const beforeAfterResults = [
+  {
+    title: "Deep Clean Reset",
+    category: "Separate before and after",
+    description:
+      "A clear transformation story with the original condition and the polished result shown side by side for quick customer trust.",
+    before: "/images/before-one.jpeg",
+    after: "/images/after-one.jpeg",
+    beforeAlt: "Before deep cleaning result from a Blackburn project",
+    afterAlt: "After deep cleaning result from a Blackburn project",
+    type: "pair"
+  },
+  {
+    title: "Visible Finish Upgrade",
+    category: "Combined comparison",
+    description:
+      "This uploaded comparison already works as one strong proof image, so it stays intact for an immediate before-to-after read.",
+    image: "/images/second.jpeg",
+    imageAlt: "Combined before and after cleaning comparison",
+    type: "combined"
+  },
+  {
+    title: "Detailed Cleaning Proof",
+    category: "Combined comparison",
+    description:
+      "A compact result image that helps visitors understand the practical difference a professional clean can make.",
+    image: "/images/third.jpeg",
+    imageAlt: "Before and after cleaning comparison in one image",
+    type: "combined"
+  },
+  {
+    title: "High-Impact Recovery",
+    category: "Separate before and after",
+    description:
+      "A strong separate-image comparison for clients who want to see the condition before the work and the finished result after.",
+    before: "/images/before-four.jpeg",
+    after: "/images/after-four.jpeg",
+    beforeAlt: "Before cleaning recovery work from a Blackburn project",
+    afterAlt: "After cleaning recovery work from a Blackburn project",
+    type: "pair"
+  }
+];
 const reviews = [
   {
     role: "Homeowner",
@@ -214,6 +256,13 @@ const pricing = [
   }
 ];
 
+const footerLinkHrefs = {
+  Results: "#before-after",
+  Projects: "#projects",
+  Reviews: "#reviews",
+  Pricing: "#pricing",
+  FAQ: "#faq"
+};
 const faqs = [
   ["What areas do you cover?", "We serve Blackburn and nearby areas. Share your postcode and we will confirm availability."],
   ["Are your cleaners insured?", "Yes. BlackBurn Cleaning Services works with vetted, trained, and insured cleaning specialists."],
@@ -229,6 +278,7 @@ export default function HomePage() {
       <main id="top">
         <Hero />
         <Services />
+        <BeforeAfterResults />
         <HorizontalScroller
           id="projects"
           title="Projects That Move With the Scroll"
@@ -366,6 +416,97 @@ function Services() {
   );
 }
 
+function BeforeAfterResults() {
+  const resultStats = [
+    ["4", "Result stories"],
+    ["6", "Uploaded photos"],
+    ["2", "Combined comparisons"]
+  ];
+
+  return (
+    <section id="before-after" className="section-pad bg-night">
+      <div className="section-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-end">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-champagne">Before & After Work</p>
+            <h2 className="display-title mt-4 text-4xl text-ivory sm:text-5xl lg:text-6xl">Real Results Customers Can Trust</h2>
+          </div>
+          <div className="grid gap-5">
+            <p className="text-base leading-8 text-smoke">
+              Before and after proof is one of the strongest reasons a visitor becomes a customer. These uploaded result photos are presented as real cleaning evidence, with no stock shortcuts mixed into the transformation gallery.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {resultStats.map(([value, label]) => (
+                <div key={label} className="rounded-[8px] border border-champagne/15 bg-charcoal/70 p-4">
+                  <p className="display-title text-3xl text-champagne">{value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-smoke">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-5 xl:grid-cols-2">
+          {beforeAfterResults.map((item) => (
+            <article key={item.title} className="premium-card overflow-hidden rounded-[8px] p-5 sm:p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">{item.category}</p>
+                  <h3 className="display-title mt-3 text-3xl text-ivory">{item.title}</h3>
+                </div>
+                <span className="inline-flex w-fit items-center gap-2 rounded-[8px] border border-champagne/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-bronze">
+                  <BadgeCheck size={15} /> Verified Look
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-7 text-smoke">{item.description}</p>
+
+              {item.type === "pair" ? (
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  <ResultPhoto label="Before" src={item.before} alt={item.beforeAlt} />
+                  <ResultPhoto label="After" src={item.after} alt={item.afterAlt} after />
+                </div>
+              ) : (
+                <div className="mt-6 rounded-[8px] border border-champagne/15 bg-night p-3">
+                  <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
+                    <span className="text-smoke">Before</span>
+                    <span className="text-champagne">After</span>
+                  </div>
+                  <div className="mt-3 aspect-square overflow-hidden rounded-[8px] bg-coal">
+                    <img src={item.image} alt={item.imageAlt} className="h-full w-full object-contain image-tone" loading="eager" />
+                  </div>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 rounded-[8px] border border-champagne/15 bg-charcoal/70 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-semibold text-ivory">Want a result customers can see immediately?</p>
+            <p className="mt-2 text-sm leading-7 text-smoke">Book a tailored clean and we will focus on the areas that matter most for presentation, handover, or guest arrival.</p>
+          </div>
+          <a href={bookingHref} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-[8px] bg-champagne px-5 py-4 text-sm font-semibold text-night shadow-gold transition hover:bg-ivory">
+            Book Cleaning <ArrowUpRight size={16} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ResultPhoto({ label, src, alt, after = false }) {
+  return (
+    <div className="rounded-[8px] border border-champagne/15 bg-night p-3">
+      <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
+        <span className={after ? "text-champagne" : "text-smoke"}>{label}</span>
+        {after ? <Check size={15} className="text-champagne" /> : <Sparkles size={15} className="text-smoke" />}
+      </div>
+      <div className="mt-3 aspect-[4/5] overflow-hidden rounded-[8px] bg-coal">
+        <img src={src} alt={alt} className="h-full w-full object-contain image-tone" loading="eager" />
+      </div>
+    </div>
+  );
+}
 function WhyChooseUs() {
   const points = [
     ["Vetted specialists", "Experienced cleaners selected for premium properties and careful communication.", ShieldCheck],
@@ -565,7 +706,7 @@ function Footer() {
           </p>
         </div>
         <FooterLinks title="Services" links={["Luxury Home Cleaning", "Jet Cleaning", "Window Cleaning", "Rubbish Removal"]} />
-        <FooterLinks title="Company" links={["Projects", "Reviews", "Pricing", "FAQ"]} />
+        <FooterLinks title="Company" links={["Results", "Projects", "Reviews", "Pricing", "FAQ"]} />
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-champagne">Contact</h3>
           <div className="mt-5 grid gap-3 text-sm text-smoke">
@@ -641,7 +782,7 @@ function FooterLinks({ title, links }) {
       <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-champagne">{title}</h3>
       <div className="mt-5 grid gap-3 text-sm text-smoke">
         {links.map((link) => (
-          <a key={link} href={link === "Pricing" ? "#pricing" : link === "FAQ" ? "#faq" : link === "Projects" ? "#projects" : link === "Reviews" ? "#reviews" : "#services"} className="hover:text-champagne">
+          <a key={link} href={footerLinkHrefs[link] ?? "#services"} className="hover:text-champagne">
             {link}
           </a>
         ))}

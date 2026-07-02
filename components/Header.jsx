@@ -6,6 +6,7 @@ import { BrandLogo } from "@/components/BrandLogo";
 
 const navItems = [
   ["Services", "#services"],
+  ["Results", "#before-after"],
   ["Projects", "#projects"],
   ["Reviews", "#reviews"],
   ["Pricing", "#pricing"],
@@ -27,7 +28,7 @@ export function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm text-pearl/82 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 text-sm text-pearl/82 lg:flex xl:gap-7" aria-label="Primary navigation">
           {navItems.map(([label, href]) => (
             <a key={label} href={href} className="transition hover:text-champagne">
               {label}
